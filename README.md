@@ -1,7 +1,6 @@
 # Infinite Bubble Popper 🫧
-
 A relaxing, infinite bubble-popping game with pixel art aesthetics and 3 cute themes! Pop bubbles as they float upward in a never-ending stream.
-
+<video src="https://github.com/user-attachments/assets/14fc3cbe-0d87-4efb-814a-27a2319bd395" controls></video>
 ## Themes
 
 - **Sea** 🐚 — Ocean background with seashell-shaped bubbles
@@ -25,7 +24,7 @@ A relaxing, infinite bubble-popping game with pixel art aesthetics and 3 cute th
 npm install
 ```
 
-### Add your assets
+### Assets
 
 Place the following PNG files in the `assets/` folder:
 
