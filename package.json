@@ -1,0 +1,17 @@
+{
+  "name": "infinite-bubble-popper",
+  "version": "1.0.0",
+  "description": "A relaxing, infinite bubble-popping game with pixel art aesthetics and multiple themes!",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "RushaliPadhiary",
+  "license": "MIT",
+  "dependencies": {
+    "howler": "^2.2.4"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0"
+  }
+}

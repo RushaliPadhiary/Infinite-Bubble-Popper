@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Infinite Bubble Popper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Full-screen game canvas -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- UI Overlay -->
+  <div id="ui-overlay">
+    <!-- Top-left: Score -->
+    <div id="score-panel">
+      <div id="score-current">🫧 <span id="score-count">0</span></div>
+      <div id="score-best">Best: <span id="score-best-count">0</span></div>
+    </div>
+
+    <!-- Top-right: Theme dropdown -->
+    <div id="theme-panel">
+      <div id="theme-selector" tabindex="0">
+        <span id="theme-label">🐚 Sea</span>
+        <span class="dropdown-arrow">▼</span>
+      </div>
+      <div id="theme-dropdown" class="hidden">
+        <div class="theme-option" data-theme="sea">🐚 Sea</div>
+        <div class="theme-option" data-theme="nightsky">⭐ Night Sky</div>
+        <div class="theme-option" data-theme="jungle">🐻 Jungle</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop particles canvas layer -->
+  <canvas id="particleCanvas"></canvas>
+
+  <script src="./node_modules/howler/dist/howler.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
+
+

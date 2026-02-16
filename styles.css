@@ -1,0 +1,179 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0a1628;
+  font-family: 'Pixelify Sans', monospace;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+/* ── Canvas ── */
+#gameCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+
+#particleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  display: block;
+}
+
+/* ── UI Overlay ── */
+#ui-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  pointer-events: none;
+}
+
+#ui-overlay > * {
+  pointer-events: auto;
+}
+
+/* ── Score Panel (top-left) ── */
+#score-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#score-current {
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow:
+    2px 2px 0 rgba(0,0,0,0.5),
+    0 0 10px rgba(255,255,255,0.2);
+  letter-spacing: 1px;
+}
+
+#score-best {
+  font-size: clamp(0.8rem, 3vw, 1.1rem);
+  font-weight: 400;
+  color: #ffd700;
+  text-shadow:
+    1px 1px 0 rgba(0,0,0,0.5),
+    0 0 8px rgba(255,215,0,0.3);
+  letter-spacing: 1px;
+}
+
+/* ── Theme Panel (top-right) ── */
+#theme-panel {
+  position: relative;
+}
+
+#theme-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  color: #fff;
+  font-family: 'Pixelify Sans', monospace;
+  font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  image-rendering: pixelated;
+}
+
+#theme-selector:hover,
+#theme-selector:focus {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+.dropdown-arrow {
+  font-size: 0.7em;
+  opacity: 0.7;
+  transition: transform 0.2s;
+}
+
+#theme-selector.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+#theme-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: dropIn 0.15s ease-out;
+}
+
+#theme-dropdown.hidden {
+  display: none;
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.theme-option {
+  padding: 10px 14px;
+  color: #fff;
+  font-family: 'Pixelify Sans', monospace;
+  font-size: clamp(0.9rem, 3.5vw, 1.15rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.theme-option:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.theme-option.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffd700;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  #ui-overlay {
+    padding: 10px;
+  }
+}
